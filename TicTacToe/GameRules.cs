@@ -87,7 +87,7 @@ namespace TicTacToe
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menu.Show();
+            menu.Show(this.Location);
         }
 
         // По нажатии на хрэстик в любой форме игра закрывается.
@@ -101,6 +101,12 @@ namespace TicTacToe
         private void btnChangeTheme_Click_1(object sender, EventArgs e)
         {
             changeTheme();            
-        }       
+        }
+
+        public void Show(Point location)
+        {
+            this.Location = location;
+            base.Show();
+        }
     }
 }

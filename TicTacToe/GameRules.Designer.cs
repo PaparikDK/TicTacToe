@@ -101,7 +101,7 @@
             this.MaximumSize = new System.Drawing.Size(800, 800);
             this.MinimumSize = new System.Drawing.Size(800, 800);
             this.Name = "GameRules";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GameRules";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameRules_FormClosing);
             this.ResumeLayout(false);

@@ -98,14 +98,14 @@ namespace TicTacToe
         // открываем форму gamePage в режиме игры ИГРОК VS ИГРОК 
         private void btn1Vs1Game_Click(object sender, EventArgs e)
         {
-            gamePage.Show();
+            gamePage.Show(this.Location);
             this.Hide();
         }
 
         // открываем форму с правилами игры
         private void btnGameRules_Click(object sender, EventArgs e)
         {
-            rulesPage.Show();
+            rulesPage.Show(this.Location);
             this.Hide();
         }
 
@@ -113,6 +113,12 @@ namespace TicTacToe
         private void btnChangeTheme_Click(object sender, EventArgs e)
         {
             changeTheme();            
+        }
+
+        public void Show(Point location)
+        {
+            this.Location = location;
+            base.Show();
         }
     }
 }

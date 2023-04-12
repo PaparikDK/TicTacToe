@@ -94,8 +94,8 @@ namespace TicTacToe
         // повернутися до головного екрану
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            menu.Show();
+            this.Hide();            
+            menu.Show(this.Location);
         }
 
         // те самые поля для хрэстиков / ноликов
@@ -159,6 +159,12 @@ namespace TicTacToe
         private void btnChangeTheme_Click_1(object sender, EventArgs e)
         {
             changeTheme();
+        }
+
+        public void Show(Point location)
+        {
+            this.Location = location;
+            base.Show();
         }
     }
 }
