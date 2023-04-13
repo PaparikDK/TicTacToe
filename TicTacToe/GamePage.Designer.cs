@@ -1,4 +1,6 @@
-﻿namespace TicTacToe
+﻿using System.Collections;
+
+namespace TicTacToe
 {
     partial class FormGamePage
     {
@@ -28,235 +30,274 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblWhoseQueue = new System.Windows.Forms.Label();
-            this.lblZeroOrCross = new System.Windows.Forms.Label();
-            this.pGameArea = new System.Windows.Forms.Panel();
-            this.picBox_3_3 = new System.Windows.Forms.PictureBox();
-            this.picBox_3_2 = new System.Windows.Forms.PictureBox();
-            this.picBox_3_1 = new System.Windows.Forms.PictureBox();
-            this.picBox_2_3 = new System.Windows.Forms.PictureBox();
-            this.picBox_2_2 = new System.Windows.Forms.PictureBox();
-            this.picBox_2_1 = new System.Windows.Forms.PictureBox();
-            this.picBox_1_3 = new System.Windows.Forms.PictureBox();
-            this.picBox_1_2 = new System.Windows.Forms.PictureBox();
-            this.picBox_1_1 = new System.Windows.Forms.PictureBox();
-            this.btnChangeTheme = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.pGameArea.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_3_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_3_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_3_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_2_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_2_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_2_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_1_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_1_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_1_1)).BeginInit();
-            this.SuspendLayout();
+            lblWhoseQueue = new Label();
+            pGameArea = new Panel();
+            picBox_8 = new PictureBox();
+            picBox_7 = new PictureBox();
+            picBox_6 = new PictureBox();
+            picBox_5 = new PictureBox();
+            picBox_4 = new PictureBox();
+            picBox_3 = new PictureBox();
+            picBox_2 = new PictureBox();
+            picBox_1 = new PictureBox();
+            picBox_0 = new PictureBox();
+            btnChangeTheme = new Button();
+            btnBack = new Button();
+            picBoxZeroOrCross = new PictureBox();
+            btnRestart = new Button();
+            pGameArea.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picBox_8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_0).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxZeroOrCross).BeginInit();
+            SuspendLayout();
             // 
             // lblWhoseQueue
             // 
-            this.lblWhoseQueue.AutoSize = true;
-            this.lblWhoseQueue.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWhoseQueue.ForeColor = System.Drawing.Color.White;
-            this.lblWhoseQueue.Location = new System.Drawing.Point(413, 34);
-            this.lblWhoseQueue.Name = "lblWhoseQueue";
-            this.lblWhoseQueue.Size = new System.Drawing.Size(264, 40);
-            this.lblWhoseQueue.TabIndex = 1;
-            this.lblWhoseQueue.Text = "Сейчас ходит:";
-            this.lblWhoseQueue.Click += new System.EventHandler(this.lblWhoseQueue_Click);
-            // 
-            // lblZeroOrCross
-            // 
-            this.lblZeroOrCross.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblZeroOrCross.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblZeroOrCross.Location = new System.Drawing.Point(683, 12);
-            this.lblZeroOrCross.Name = "lblZeroOrCross";
-            this.lblZeroOrCross.Size = new System.Drawing.Size(80, 80);
-            this.lblZeroOrCross.TabIndex = 2;
-            this.lblZeroOrCross.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblZeroOrCross.Click += new System.EventHandler(this.lblZeroOrCross_Click);
+            lblWhoseQueue.AutoSize = true;
+            lblWhoseQueue.Font = new Font("Consolas", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblWhoseQueue.ForeColor = Color.White;
+            lblWhoseQueue.Location = new Point(413, 34);
+            lblWhoseQueue.Name = "lblWhoseQueue";
+            lblWhoseQueue.Size = new Size(264, 40);
+            lblWhoseQueue.TabIndex = 1;
+            lblWhoseQueue.Text = "Сейчас ходит:";
+            lblWhoseQueue.Click += lblWhoseQueue_Click;
             // 
             // pGameArea
             // 
-            this.pGameArea.BackColor = System.Drawing.Color.White;
-            this.pGameArea.Controls.Add(this.picBox_3_3);
-            this.pGameArea.Controls.Add(this.picBox_3_2);
-            this.pGameArea.Controls.Add(this.picBox_3_1);
-            this.pGameArea.Controls.Add(this.picBox_2_3);
-            this.pGameArea.Controls.Add(this.picBox_2_2);
-            this.pGameArea.Controls.Add(this.picBox_2_1);
-            this.pGameArea.Controls.Add(this.picBox_1_3);
-            this.pGameArea.Controls.Add(this.picBox_1_2);
-            this.pGameArea.Controls.Add(this.picBox_1_1);
-            this.pGameArea.Location = new System.Drawing.Point(100, 120);
-            this.pGameArea.Name = "pGameArea";
-            this.pGameArea.Size = new System.Drawing.Size(610, 610);
-            this.pGameArea.TabIndex = 3;
+            pGameArea.BackColor = Color.White;
+            pGameArea.Controls.Add(picBox_8);
+            pGameArea.Controls.Add(picBox_7);
+            pGameArea.Controls.Add(picBox_6);
+            pGameArea.Controls.Add(picBox_5);
+            pGameArea.Controls.Add(picBox_4);
+            pGameArea.Controls.Add(picBox_3);
+            pGameArea.Controls.Add(picBox_2);
+            pGameArea.Controls.Add(picBox_1);
+            pGameArea.Controls.Add(picBox_0);
+            pGameArea.Location = new Point(100, 120);
+            pGameArea.Name = "pGameArea";
+            pGameArea.Size = new Size(610, 610);
+            pGameArea.TabIndex = 3;
             // 
-            // picBox_3_3
+            // picBox_8
             // 
-            this.picBox_3_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_3_3.Location = new System.Drawing.Point(410, 410);
-            this.picBox_3_3.Name = "picBox_3_3";
-            this.picBox_3_3.Size = new System.Drawing.Size(200, 200);
-            this.picBox_3_3.TabIndex = 8;
-            this.picBox_3_3.TabStop = false;
-            this.picBox_3_3.Click += new System.EventHandler(this.picBox_3_3_Click);
+            picBox_8.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_8.Location = new Point(410, 410);
+            picBox_8.Name = "picBox_8";
+            picBox_8.Size = new Size(200, 200);
+            picBox_8.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_8.TabIndex = 8;
+            picBox_8.TabStop = false;
+            picBox_8.Click += picBox_3_3_Click;
             // 
-            // picBox_3_2
+            // picBox_7
             // 
-            this.picBox_3_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_3_2.Location = new System.Drawing.Point(205, 410);
-            this.picBox_3_2.Name = "picBox_3_2";
-            this.picBox_3_2.Size = new System.Drawing.Size(200, 200);
-            this.picBox_3_2.TabIndex = 7;
-            this.picBox_3_2.TabStop = false;
-            this.picBox_3_2.Click += new System.EventHandler(this.picBox_3_2_Click);
+            picBox_7.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_7.Location = new Point(205, 410);
+            picBox_7.Name = "picBox_7";
+            picBox_7.Size = new Size(200, 200);
+            picBox_7.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_7.TabIndex = 7;
+            picBox_7.TabStop = false;
+            picBox_7.Click += picBox_3_2_Click;
             // 
-            // picBox_3_1
+            // picBox_6
             // 
-            this.picBox_3_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_3_1.Location = new System.Drawing.Point(0, 410);
-            this.picBox_3_1.Name = "picBox_3_1";
-            this.picBox_3_1.Size = new System.Drawing.Size(200, 200);
-            this.picBox_3_1.TabIndex = 6;
-            this.picBox_3_1.TabStop = false;
-            this.picBox_3_1.Click += new System.EventHandler(this.picBox_3_1_Click);
+            picBox_6.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_6.Location = new Point(0, 410);
+            picBox_6.Name = "picBox_6";
+            picBox_6.Size = new Size(200, 200);
+            picBox_6.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_6.TabIndex = 6;
+            picBox_6.TabStop = false;
+            picBox_6.Click += picBox_3_1_Click;
             // 
-            // picBox_2_3
+            // picBox_5
             // 
-            this.picBox_2_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_2_3.Location = new System.Drawing.Point(410, 205);
-            this.picBox_2_3.Name = "picBox_2_3";
-            this.picBox_2_3.Size = new System.Drawing.Size(200, 200);
-            this.picBox_2_3.TabIndex = 5;
-            this.picBox_2_3.TabStop = false;
-            this.picBox_2_3.Click += new System.EventHandler(this.picBox_2_3_Click);
+            picBox_5.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_5.Location = new Point(410, 205);
+            picBox_5.Name = "picBox_5";
+            picBox_5.Size = new Size(200, 200);
+            picBox_5.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_5.TabIndex = 5;
+            picBox_5.TabStop = false;
+            picBox_5.Click += picBox_2_3_Click;
             // 
-            // picBox_2_2
+            // picBox_4
             // 
-            this.picBox_2_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_2_2.Location = new System.Drawing.Point(205, 205);
-            this.picBox_2_2.Name = "picBox_2_2";
-            this.picBox_2_2.Size = new System.Drawing.Size(200, 200);
-            this.picBox_2_2.TabIndex = 4;
-            this.picBox_2_2.TabStop = false;
-            this.picBox_2_2.Click += new System.EventHandler(this.picBox_2_2_Click);
+            picBox_4.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_4.Location = new Point(205, 205);
+            picBox_4.Name = "picBox_4";
+            picBox_4.Size = new Size(200, 200);
+            picBox_4.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_4.TabIndex = 4;
+            picBox_4.TabStop = false;
+            picBox_4.Click += picBox_2_2_Click;
             // 
-            // picBox_2_1
+            // picBox_3
             // 
-            this.picBox_2_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_2_1.Location = new System.Drawing.Point(0, 205);
-            this.picBox_2_1.Name = "picBox_2_1";
-            this.picBox_2_1.Size = new System.Drawing.Size(200, 200);
-            this.picBox_2_1.TabIndex = 3;
-            this.picBox_2_1.TabStop = false;
-            this.picBox_2_1.Click += new System.EventHandler(this.picBox_2_1_Click);
+            picBox_3.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_3.Location = new Point(0, 205);
+            picBox_3.Name = "picBox_3";
+            picBox_3.Size = new Size(200, 200);
+            picBox_3.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_3.TabIndex = 3;
+            picBox_3.TabStop = false;
+            picBox_3.Click += picBox_2_1_Click;
             // 
-            // picBox_1_3
+            // picBox_2
             // 
-            this.picBox_1_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_1_3.Location = new System.Drawing.Point(410, 0);
-            this.picBox_1_3.Name = "picBox_1_3";
-            this.picBox_1_3.Size = new System.Drawing.Size(200, 200);
-            this.picBox_1_3.TabIndex = 2;
-            this.picBox_1_3.TabStop = false;
-            this.picBox_1_3.Click += new System.EventHandler(this.picBox_1_3_Click);
+            picBox_2.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_2.Location = new Point(410, 0);
+            picBox_2.Name = "picBox_2";
+            picBox_2.Size = new Size(200, 200);
+            picBox_2.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_2.TabIndex = 2;
+            picBox_2.TabStop = false;
+            picBox_2.Click += picBox_1_3_Click;
             // 
-            // picBox_1_2
+            // picBox_1
             // 
-            this.picBox_1_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_1_2.Location = new System.Drawing.Point(205, 0);
-            this.picBox_1_2.Name = "picBox_1_2";
-            this.picBox_1_2.Size = new System.Drawing.Size(200, 200);
-            this.picBox_1_2.TabIndex = 1;
-            this.picBox_1_2.TabStop = false;
-            this.picBox_1_2.Click += new System.EventHandler(this.picBx_1_2_Click);
+            picBox_1.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_1.Location = new Point(205, 0);
+            picBox_1.Name = "picBox_1";
+            picBox_1.Size = new Size(200, 200);
+            picBox_1.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_1.TabIndex = 1;
+            picBox_1.TabStop = false;
+            picBox_1.Click += picBx_1_2_Click;
             // 
-            // picBox_1_1
+            // picBox_0
             // 
-            this.picBox_1_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.picBox_1_1.Location = new System.Drawing.Point(0, 0);
-            this.picBox_1_1.Name = "picBox_1_1";
-            this.picBox_1_1.Size = new System.Drawing.Size(200, 200);
-            this.picBox_1_1.TabIndex = 0;
-            this.picBox_1_1.TabStop = false;
-            this.picBox_1_1.Click += new System.EventHandler(this.picBox_1_1_Click);
+            picBox_0.BackColor = Color.FromArgb(45, 56, 82);
+            picBox_0.Location = new Point(0, 0);
+            picBox_0.MaximumSize = new Size(200, 200);
+            picBox_0.MinimumSize = new Size(200, 200);
+            picBox_0.Name = "picBox_0";
+            picBox_0.Size = new Size(200, 200);
+            picBox_0.SizeMode = PictureBoxSizeMode.CenterImage;
+            picBox_0.TabIndex = 0;
+            picBox_0.TabStop = false;
+            picBox_0.Click += picBox_1_1_Click;
             // 
             // btnChangeTheme
             // 
-            this.btnChangeTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(229)))), ((int)(((byte)(220)))));
-            this.btnChangeTheme.FlatAppearance.BorderSize = 0;
-            this.btnChangeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeTheme.Location = new System.Drawing.Point(80, 12);
-            this.btnChangeTheme.Name = "btnChangeTheme";
-            this.btnChangeTheme.Size = new System.Drawing.Size(50, 50);
-            this.btnChangeTheme.TabIndex = 8;
-            this.btnChangeTheme.UseVisualStyleBackColor = false;
-            this.btnChangeTheme.Click += new System.EventHandler(this.btnChangeTheme_Click_1);
+            btnChangeTheme.BackColor = Color.FromArgb(237, 229, 220);
+            btnChangeTheme.FlatAppearance.BorderSize = 0;
+            btnChangeTheme.FlatStyle = FlatStyle.Flat;
+            btnChangeTheme.Location = new Point(80, 12);
+            btnChangeTheme.Name = "btnChangeTheme";
+            btnChangeTheme.Size = new Size(50, 50);
+            btnChangeTheme.TabIndex = 8;
+            btnChangeTheme.UseVisualStyleBackColor = false;
+            btnChangeTheme.Click += btnChangeTheme_Click_1;
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(229)))), ((int)(((byte)(220)))));
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(50, 50);
-            this.btnBack.TabIndex = 9;
-            this.btnBack.Text = "<";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.BackColor = Color.FromArgb(237, 229, 220);
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Consolas", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBack.ForeColor = Color.FromArgb(69, 69, 69);
+            btnBack.Location = new Point(12, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(50, 50);
+            btnBack.TabIndex = 9;
+            btnBack.Text = "<";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            // 
+            // picBoxZeroOrCross
+            // 
+            picBoxZeroOrCross.Location = new Point(683, 12);
+            picBoxZeroOrCross.Name = "picBoxZeroOrCross";
+            picBoxZeroOrCross.Size = new Size(80, 80);
+            picBoxZeroOrCross.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxZeroOrCross.TabIndex = 10;
+            picBoxZeroOrCross.TabStop = false;
+            // 
+            // btnRestart
+            // 
+            btnRestart.BackColor = Color.FromArgb(237, 229, 220);
+            btnRestart.FlatAppearance.BorderSize = 0;
+            btnRestart.FlatStyle = FlatStyle.Flat;
+            btnRestart.Font = new Font("Consolas", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRestart.Location = new Point(150, 12);
+            btnRestart.Name = "btnRestart";
+            btnRestart.Size = new Size(108, 50);
+            btnRestart.TabIndex = 11;
+            btnRestart.Text = "Заново";
+            btnRestart.UseVisualStyleBackColor = false;
+            btnRestart.Click += btnRestart_Click;
             // 
             // FormGamePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(782, 753);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnChangeTheme);
-            this.Controls.Add(this.pGameArea);
-            this.Controls.Add(this.lblZeroOrCross);
-            this.Controls.Add(this.lblWhoseQueue);
-            this.MaximumSize = new System.Drawing.Size(800, 800);
-            this.MinimumSize = new System.Drawing.Size(800, 800);
-            this.Name = "FormGamePage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "GamePage";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormGamePage_FormClosing);
-            this.pGameArea.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_3_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_3_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_3_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_2_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_2_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_2_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_1_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_1_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_1_1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(45, 56, 82);
+            ClientSize = new Size(782, 753);
+            Controls.Add(btnRestart);
+            Controls.Add(picBoxZeroOrCross);
+            Controls.Add(btnBack);
+            Controls.Add(btnChangeTheme);
+            Controls.Add(pGameArea);
+            Controls.Add(lblWhoseQueue);
+            MaximumSize = new Size(800, 800);
+            MinimumSize = new Size(800, 800);
+            Name = "FormGamePage";
+            StartPosition = FormStartPosition.Manual;
+            Text = "GamePage";
+            FormClosing += FormGamePage_FormClosing;
+            pGameArea.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picBox_8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBox_0).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxZeroOrCross).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
+            listPicBoxFields.Add(picBox_0);
+            listPicBoxFields.Add(picBox_1);
+            listPicBoxFields.Add(picBox_2);
+            listPicBoxFields.Add(picBox_3);
+            listPicBoxFields.Add(picBox_4);
+            listPicBoxFields.Add(picBox_5);
+            listPicBoxFields.Add(picBox_6);
+            listPicBoxFields.Add(picBox_7);
+            listPicBoxFields.Add(picBox_8);
         }
 
+        // список наших pcitureBoxов, чтобы иметь возможность обращаться по индексу
+        List<PictureBox> listPicBoxFields = new List<PictureBox>(9);
         #endregion
         private Label lblWhoseQueue;
-        private Label lblZeroOrCross;
         private Panel pGameArea;
-        private PictureBox picBox_1_2;
-        private PictureBox picBox_1_1;
-        private PictureBox picBox_1_3;
-        private PictureBox picBox_2_1;
-        private PictureBox picBox_3_3;
-        private PictureBox picBox_3_2;
-        private PictureBox picBox_3_1;
-        private PictureBox picBox_2_3;
-        private PictureBox picBox_2_2;
+        private PictureBox picBox_1;
+        private PictureBox picBox_0;
+        private PictureBox picBox_2;
+        private PictureBox picBox_3;
+        private PictureBox picBox_8;
+        private PictureBox picBox_7;
+        private PictureBox picBox_6;
+        private PictureBox picBox_5;
+        private PictureBox picBox_4;
         private Button btnChangeTheme;
         private Button btnBack;
+        private PictureBox picBoxZeroOrCross;
+        private Button btnRestart;
     }
 }

@@ -61,11 +61,51 @@ namespace TicTacToe.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CircleBlack {
+            get {
+                object obj = ResourceManager.GetObject("CircleBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CircleWhite {
+            get {
+                object obj = ResourceManager.GetObject("CircleWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cross {
+            get {
+                object obj = ResourceManager.GetObject("Cross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на false.
         /// </summary>
         internal static string isLightTheme {
             get {
                 return ResourceManager.GetString("isLightTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RestartIcon {
+            get {
+                object obj = ResourceManager.GetObject("RestartIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
