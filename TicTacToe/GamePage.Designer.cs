@@ -191,7 +191,8 @@ namespace TicTacToe
             // btnChangeTheme
             // 
             btnChangeTheme.BackColor = Color.FromArgb(237, 229, 220);
-            btnChangeTheme.FlatAppearance.BorderSize = 0;
+            btnChangeTheme.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
+            btnChangeTheme.FlatAppearance.BorderSize = 2;
             btnChangeTheme.FlatStyle = FlatStyle.Flat;
             btnChangeTheme.Location = new Point(80, 12);
             btnChangeTheme.Name = "btnChangeTheme";
@@ -203,7 +204,8 @@ namespace TicTacToe
             // btnBack
             // 
             btnBack.BackColor = Color.FromArgb(237, 229, 220);
-            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
+            btnBack.FlatAppearance.BorderSize = 2;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("Consolas", 20F, FontStyle.Regular, GraphicsUnit.Point);
             btnBack.ForeColor = Color.FromArgb(69, 69, 69);
@@ -227,12 +229,13 @@ namespace TicTacToe
             // btnRestart
             // 
             btnRestart.BackColor = Color.FromArgb(237, 229, 220);
-            btnRestart.FlatAppearance.BorderSize = 0;
+            btnRestart.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
+            btnRestart.FlatAppearance.BorderSize = 2;
             btnRestart.FlatStyle = FlatStyle.Flat;
             btnRestart.Font = new Font("Consolas", 15F, FontStyle.Regular, GraphicsUnit.Point);
             btnRestart.Location = new Point(150, 12);
             btnRestart.Name = "btnRestart";
-            btnRestart.Size = new Size(108, 50);
+            btnRestart.Size = new Size(110, 50);
             btnRestart.TabIndex = 11;
             btnRestart.Text = "Заново";
             btnRestart.UseVisualStyleBackColor = false;
@@ -269,16 +272,6 @@ namespace TicTacToe
             ((System.ComponentModel.ISupportInitialize)picBoxZeroOrCross).EndInit();
             ResumeLayout(false);
             PerformLayout();
-
-            listPicBoxFields.Add(picBox_0);
-            listPicBoxFields.Add(picBox_1);
-            listPicBoxFields.Add(picBox_2);
-            listPicBoxFields.Add(picBox_3);
-            listPicBoxFields.Add(picBox_4);
-            listPicBoxFields.Add(picBox_5);
-            listPicBoxFields.Add(picBox_6);
-            listPicBoxFields.Add(picBox_7);
-            listPicBoxFields.Add(picBox_8);
         }
 
         // список наших pcitureBoxов, чтобы иметь возможность обращаться по индексу

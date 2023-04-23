@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Drawing.Text;
 
 namespace TicTacToe
@@ -14,52 +15,54 @@ namespace TicTacToe
         // создаю формы для игры и форму с правилами (позже добавим форму достижений) как поля
         internal FormGamePage gamePage;
         internal GameRules rulesPage;
+        internal ScoresForm scoresPage;
         // заранее задал собственные цвета в виде переменных, чтобы быстрее было работать и легче понимать код
         Color lightColorTheme = Color.FromArgb(237, 229, 220);
         Color darkColorTheme = Color.FromArgb(45, 56, 82);
         Color specialColorBlack = Color.FromArgb(69, 69, 69);
-
+        bool isLightTheme = Convert.ToBoolean(Properties.Resources.isLightTheme);
         /* Важный момент!
          * В потугах синхронизировать смену тем между формами я доебался до включения поля "isLightTheme" в файл Resources
          * (смотреть справа в обозревателе решений), но оттуда можно только читать, поентаму придётся делать текствый файл,
          * но я со спокойной душой спихиваю это на совесть Кирилла.
          * На данный момент поле isLightTheme инициализируется через этот прыжок с переподвыподвертом.
          */
-        bool isLightTheme = Convert.ToBoolean(Properties.Resources.isLightTheme);
         public FrmMainMenu() // конструктор (не Лего)
         {
             InitializeComponent();
             gamePage = new FormGamePage(this);
             rulesPage = new GameRules(this);
+            scoresPage = new ScoresForm(this);
         }
 
         // эта херовина запускает смену тем во ВСЕХ формах
-        void changeTheme()
+        public void changeTheme()
         {
             changeFormTheme();
             gamePage.changeFormTheme();
             rulesPage.changeFormTheme();
+            scoresPage.changeFormTheme();
         }
 
         // Метод меняет значение поля для темы и вызывает метод смены темы
-        public void changeFormTheme()
+        void changeFormTheme()
         {
-            SetTheme();           
+            SetTheme();
             if (isLightTheme)
-            {                
+            {
                 isLightTheme = false;
             }
             else if (!isLightTheme)
-            {                
-                isLightTheme = true;                
-            }            
+            {
+                isLightTheme = true;
+            }
         }
 
         // метод смены цвета на всех элементах формы
         void SetTheme()
         {
             if (isLightTheme)
-            {                
+            {
                 BackColor = darkColorTheme;
                 lblSmallFontBottomPage.BackColor = darkColorTheme;
                 lblSmallFontBottomPage.ForeColor = lightColorTheme;
@@ -67,7 +70,7 @@ namespace TicTacToe
                 lblTictactoe.ForeColor = lightColorTheme;
                 lblTictactoeRus.BackColor = darkColorTheme;
                 lblTictactoeRus.ForeColor = lightColorTheme;
-                btnChangeTheme.BackColor = lightColorTheme;
+                btnChangeTheme.BackColor = lightColorTheme;                                
             }
             else if (!isLightTheme)
             {
@@ -78,7 +81,26 @@ namespace TicTacToe
                 lblTictactoe.ForeColor = darkColorTheme;
                 lblTictactoeRus.BackColor = lightColorTheme;
                 lblTictactoeRus.ForeColor = darkColorTheme;
-                btnChangeTheme.BackColor = darkColorTheme;
+                btnChangeTheme.BackColor = darkColorTheme;                
+            }
+            foreach (Button btn in Controls.OfType<Button>())
+            {
+                changeBtnsTheme(btn);
+            }
+        }
+
+        // изменяет тему каждой кномпки
+        void changeBtnsTheme(Button btn)
+        {
+            if (isLightTheme)
+            {
+                btn.BackColor = lightColorTheme;
+                btn.ForeColor = specialColorBlack;
+            }
+            else if (!isLightTheme)
+            {
+                btn.BackColor = darkColorTheme;
+                btn.ForeColor = lightColorTheme;
             }
         }
 
@@ -91,7 +113,7 @@ namespace TicTacToe
         // открываем форму gamePage в режиме игры ИГРОК VS БОТ
         private void btn1VsBotGame_Click(object sender, EventArgs e)
         {
-            gamePage.Show();
+            gamePage.Show(this.Location);
             this.Hide();
         }
 
@@ -112,13 +134,19 @@ namespace TicTacToe
         // меняем тему во всех формах        
         private void btnChangeTheme_Click(object sender, EventArgs e)
         {
-            changeTheme();            
+            changeTheme();
         }
 
         public void Show(Point location)
         {
             this.Location = location;
             base.Show();
+        }
+
+        private void btnScores_Click(object sender, EventArgs e)
+        {
+            scoresPage.Show(this.Location);
+            this.Hide();
         }
     }
 }

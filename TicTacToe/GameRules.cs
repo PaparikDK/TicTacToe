@@ -36,9 +36,7 @@ namespace TicTacToe
 
         void changeTheme()
         {
-            changeFormTheme();
-            menu.changeFormTheme();
-            menu.gamePage.changeFormTheme();
+            menu.changeTheme();
         }
 
         // да, во всех трёх классах этот метод одинаков
@@ -46,11 +44,11 @@ namespace TicTacToe
         {
             SetTheme();
             if (isLightTheme)
-            {                
+            {
                 isLightTheme = false;
             }
             else if (!isLightTheme)
-            {                
+            {
                 isLightTheme = true;
             }
         }
@@ -58,9 +56,9 @@ namespace TicTacToe
         // меняем цвета всех элементов формы
         // Что? Можно было переопределить? Ла-ла-ла-ла-ла ничего не слышу
         void SetTheme()
-        {            
+        {
             if (isLightTheme)
-            {                
+            {
                 BackColor = darkColorTheme;
                 lblGameRules.BackColor = darkColorTheme;
                 lblGameRules.ForeColor = Color.White;
@@ -100,7 +98,7 @@ namespace TicTacToe
         // угадай что? Меняем тему, умница
         private void btnChangeTheme_Click_1(object sender, EventArgs e)
         {
-            changeTheme();            
+            changeTheme();
         }
 
         public void Show(Point location)

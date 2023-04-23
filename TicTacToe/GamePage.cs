@@ -96,10 +96,8 @@ namespace TicTacToe
 
         // сменить тему
         void changeTheme()
-        {
-            changeFormTheme();
-            menu.changeFormTheme();
-            menu.rulesPage.changeFormTheme();
+        {            
+            menu.changeTheme();            
         }
 
         // Дежавю?
@@ -218,7 +216,7 @@ namespace TicTacToe
             }
 
             // очищаем массив
-            for (int i = 0; i < 9; i++) 
+            for (int i = 0; i < 9; i++)
             {
                 arrPictureOnPicBox[i] = TypeOfPicture.None;
             }
@@ -315,6 +313,6 @@ namespace TicTacToe
             base.Show();
         }
 
-        
+
     }
 }
