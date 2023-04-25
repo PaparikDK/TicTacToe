@@ -40,6 +40,23 @@ namespace TicTacToe
             InitializeComponent();
             this.menu = menu;
             picBoxZeroOrCross.Image = Properties.Resources.Cross;
+            // Лапками добавляем пикБоксы в листПикБоксФиелдс, энд ес, ай эм фром Лондон литтл бит
+            listPicBoxFields.Add(picBox_0);
+            listPicBoxFields.Add(picBox_1);
+            listPicBoxFields.Add(picBox_2);
+            listPicBoxFields.Add(picBox_3);
+            listPicBoxFields.Add(picBox_4);
+            listPicBoxFields.Add(picBox_5);
+            listPicBoxFields.Add(picBox_6);
+            listPicBoxFields.Add(picBox_7);
+            listPicBoxFields.Add(picBox_8);
+            /* Эта херота добавляет в listPicBoxFields элементы в обратном порядке и в целом выёбывается, 
+             * если найдёте решение - отнесите в бюро найденных решений
+            foreach (PictureBox picBox in pGameArea.Controls.OfType<PictureBox>())
+            {
+                listPicBoxFields.Add(picBox);
+            }
+            */
         }
 
         // метод выводит очередь игрока
@@ -236,55 +253,55 @@ namespace TicTacToe
         }
 
         // те самые поля для хрэстиков / ноликов
-        private void picBox_1_1_Click(object sender, EventArgs e)
+        private void picBox_0_Click(object sender, EventArgs e)
         {
             SetPicture(0);
             picBox_0.Enabled = false;
         }
 
-        private void picBx_1_2_Click(object sender, EventArgs e)
+        private void picBox_1_Click(object sender, EventArgs e)
         {
             SetPicture(1);
             picBox_1.Enabled = false;
         }
 
-        private void picBox_1_3_Click(object sender, EventArgs e)
+        private void picBox_2_Click(object sender, EventArgs e)
         {
             SetPicture(2);
             picBox_2.Enabled = false;
         }
 
-        private void picBox_2_1_Click(object sender, EventArgs e)
+        private void picBox_3_Click(object sender, EventArgs e)
         {
             SetPicture(3);
             picBox_3.Enabled = false;
         }
 
-        private void picBox_2_2_Click(object sender, EventArgs e)
+        private void picBox_4_Click(object sender, EventArgs e)
         {
             SetPicture(4);
             picBox_4.Enabled = false;
         }
 
-        private void picBox_2_3_Click(object sender, EventArgs e)
+        private void picBox_5_Click(object sender, EventArgs e)
         {
             SetPicture(5);
             picBox_5.Enabled = false;
         }
 
-        private void picBox_3_1_Click(object sender, EventArgs e)
+        private void picBox_6_Click(object sender, EventArgs e)
         {
             SetPicture(6);
             picBox_6.Enabled = false;
         }
 
-        private void picBox_3_2_Click(object sender, EventArgs e)
+        private void picBox_7_Click(object sender, EventArgs e)
         {
             SetPicture(7);
             picBox_7.Enabled = false;
         }
 
-        private void picBox_3_3_Click(object sender, EventArgs e)
+        private void picBox_8_Click(object sender, EventArgs e)
         {
             SetPicture(8);
             picBox_8.Enabled = false;

@@ -29,7 +29,7 @@ namespace TicTacToe
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
+        {            
             lblWhoseQueue = new Label();
             pGameArea = new Panel();
             picBox_8 = new PictureBox();
@@ -96,7 +96,7 @@ namespace TicTacToe
             picBox_8.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_8.TabIndex = 8;
             picBox_8.TabStop = false;
-            picBox_8.Click += picBox_3_3_Click;
+            picBox_8.Click += picBox_8_Click;
             // 
             // picBox_7
             // 
@@ -107,7 +107,7 @@ namespace TicTacToe
             picBox_7.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_7.TabIndex = 7;
             picBox_7.TabStop = false;
-            picBox_7.Click += picBox_3_2_Click;
+            picBox_7.Click += picBox_7_Click;
             // 
             // picBox_6
             // 
@@ -118,7 +118,7 @@ namespace TicTacToe
             picBox_6.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_6.TabIndex = 6;
             picBox_6.TabStop = false;
-            picBox_6.Click += picBox_3_1_Click;
+            picBox_6.Click += picBox_6_Click;
             // 
             // picBox_5
             // 
@@ -129,7 +129,7 @@ namespace TicTacToe
             picBox_5.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_5.TabIndex = 5;
             picBox_5.TabStop = false;
-            picBox_5.Click += picBox_2_3_Click;
+            picBox_5.Click += picBox_5_Click;
             // 
             // picBox_4
             // 
@@ -140,7 +140,7 @@ namespace TicTacToe
             picBox_4.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_4.TabIndex = 4;
             picBox_4.TabStop = false;
-            picBox_4.Click += picBox_2_2_Click;
+            picBox_4.Click += picBox_4_Click;
             // 
             // picBox_3
             // 
@@ -151,7 +151,7 @@ namespace TicTacToe
             picBox_3.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_3.TabIndex = 3;
             picBox_3.TabStop = false;
-            picBox_3.Click += picBox_2_1_Click;
+            picBox_3.Click += picBox_3_Click;
             // 
             // picBox_2
             // 
@@ -162,7 +162,7 @@ namespace TicTacToe
             picBox_2.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_2.TabIndex = 2;
             picBox_2.TabStop = false;
-            picBox_2.Click += picBox_1_3_Click;
+            picBox_2.Click += picBox_2_Click;
             // 
             // picBox_1
             // 
@@ -173,7 +173,7 @@ namespace TicTacToe
             picBox_1.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_1.TabIndex = 1;
             picBox_1.TabStop = false;
-            picBox_1.Click += picBx_1_2_Click;
+            picBox_1.Click += picBox_1_Click;
             // 
             // picBox_0
             // 
@@ -186,7 +186,7 @@ namespace TicTacToe
             picBox_0.SizeMode = PictureBoxSizeMode.CenterImage;
             picBox_0.TabIndex = 0;
             picBox_0.TabStop = false;
-            picBox_0.Click += picBox_1_1_Click;
+            picBox_0.Click += picBox_0_Click;
             // 
             // btnChangeTheme
             // 
@@ -271,7 +271,7 @@ namespace TicTacToe
             ((System.ComponentModel.ISupportInitialize)picBox_0).EndInit();
             ((System.ComponentModel.ISupportInitialize)picBoxZeroOrCross).EndInit();
             ResumeLayout(false);
-            PerformLayout();
+            PerformLayout();            
         }
 
         // список наших pcitureBoxов, чтобы иметь возможность обращаться по индексу
