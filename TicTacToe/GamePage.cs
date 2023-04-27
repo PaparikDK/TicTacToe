@@ -237,6 +237,10 @@ namespace TicTacToe
             {
                 arrPictureOnPicBox[i] = TypeOfPicture.None;
             }
+
+            // очистка логической части
+            stroke_Couter = 0;
+            Array.Clear(recorded_choice, 0, 9);
         }
 
         // натыркал куда угодно, поди разбери, что тут нужно, а что нет
@@ -252,59 +256,79 @@ namespace TicTacToe
             menu.Show(this.Location);
         }
 
+        
+
         // те самые поля для хрэстиков / ноликов
         private void picBox_0_Click(object sender, EventArgs e)
         {
             SetPicture(0);
             picBox_0.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(0);
         }
 
         private void picBox_1_Click(object sender, EventArgs e)
         {
             SetPicture(1);
             picBox_1.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(1);
         }
 
         private void picBox_2_Click(object sender, EventArgs e)
         {
             SetPicture(2);
             picBox_2.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(2);
         }
 
         private void picBox_3_Click(object sender, EventArgs e)
         {
             SetPicture(3);
             picBox_3.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(3);
         }
 
         private void picBox_4_Click(object sender, EventArgs e)
         {
             SetPicture(4);
             picBox_4.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(4);
         }
 
         private void picBox_5_Click(object sender, EventArgs e)
         {
             SetPicture(5);
             picBox_5.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(5);
         }
 
         private void picBox_6_Click(object sender, EventArgs e)
         {
             SetPicture(6);
             picBox_6.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(6);
         }
 
         private void picBox_7_Click(object sender, EventArgs e)
         {
             SetPicture(7);
             picBox_7.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(7);
         }
 
         private void picBox_8_Click(object sender, EventArgs e)
         {
             SetPicture(8);
             picBox_8.Enabled = false;
+            stroke_Couter++;
+            choiceRecord(8);
         }
 
         // кнопка на случай, даже если в Крестики-нолики начинает бомбить пердак
