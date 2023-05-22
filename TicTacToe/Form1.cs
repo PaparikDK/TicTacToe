@@ -6,42 +6,29 @@ namespace TicTacToe
 {
     public partial class FrmMainMenu : Form
     {
-        /*
-         * Скажу сразу, что я проебался в начале с несколькими моментами, например, таким как унаследвовать
-         * все формы от какого-нить асбтрактного класса с полями типа цветов, общими РЕАЛЬНО одинаковыми методами
-         * и т. д. но как бы а что вы мне сделаете вы не знаете, где я живу :)
-         */
-
         // создаю формы для игры и форму с правилами (позже добавим форму достижений) как поля
         internal FormGamePage gamePage;
         internal GameRules rulesPage;
-        internal ScoresForm scoresPage;
+
         // заранее задал собственные цвета в виде переменных, чтобы быстрее было работать и легче понимать код
         Color lightColorTheme = Color.FromArgb(237, 229, 220);
         Color darkColorTheme = Color.FromArgb(45, 56, 82);
         Color specialColorBlack = Color.FromArgb(69, 69, 69);
         bool isLightTheme = Convert.ToBoolean(Properties.Resources.isLightTheme);
-        /* Важный момент!
-         * В потугах синхронизировать смену тем между формами я доебался до включения поля "isLightTheme" в файл Resources
-         * (смотреть справа в обозревателе решений), но оттуда можно только читать, поентаму придётся делать текствый файл,
-         * но я со спокойной душой спихиваю это на совесть Кирилла.
-         * На данный момент поле isLightTheme инициализируется через этот прыжок с переподвыподвертом.
-         */
+
         public FrmMainMenu() // конструктор (не Лего)
         {
             InitializeComponent();
             gamePage = new FormGamePage(this);
             rulesPage = new GameRules(this);
-            scoresPage = new ScoresForm(this);
         }
 
-        // эта херовина запускает смену тем во ВСЕХ формах
+        // запускает смену тем во ВСЕХ формах
         public void changeTheme()
         {
             changeFormTheme();
             gamePage.changeFormTheme();
             rulesPage.changeFormTheme();
-            scoresPage.changeFormTheme();
         }
 
         // Метод меняет значение поля для темы и вызывает метод смены темы
@@ -104,16 +91,12 @@ namespace TicTacToe
             }
         }
 
-        // случайно клацнул, это не нужно
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         // открываем форму gamePage в режиме игры ИГРОК VS БОТ
         private void btn1VsBotGame_Click(object sender, EventArgs e)
         {
             gamePage.Show(this.Location);
+            gamePage.isBot = true;
+            gamePage.restartGame();
             this.Hide();
         }
 
@@ -121,6 +104,8 @@ namespace TicTacToe
         private void btn1Vs1Game_Click(object sender, EventArgs e)
         {
             gamePage.Show(this.Location);
+            gamePage.isBot = false;
+            gamePage.restartGame();
             this.Hide();
         }
 
@@ -141,12 +126,6 @@ namespace TicTacToe
         {
             this.Location = location;
             base.Show();
-        }
-
-        private void btnScores_Click(object sender, EventArgs e)
-        {
-            scoresPage.Show(this.Location);
-            this.Hide();
         }
     }
 }

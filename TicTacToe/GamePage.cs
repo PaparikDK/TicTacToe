@@ -21,6 +21,9 @@ namespace TicTacToe
         bool isLightTheme = Convert.ToBoolean(Properties.Resources.isLightTheme);
         bool isCrossQueue = true; // переменная для теста картинок - можешь пользоваться ей даль
 
+        // Переменные для бота
+        public bool isBot = false;
+
         // Пречисляемый тип с данными "хрэстик" и "нолик" чисто для души (1 и 0 слишком скучно)
         enum TypeOfPicture
         {
@@ -50,13 +53,6 @@ namespace TicTacToe
             listPicBoxFields.Add(picBox_6);
             listPicBoxFields.Add(picBox_7);
             listPicBoxFields.Add(picBox_8);
-            /* Эта херота добавляет в listPicBoxFields элементы в обратном порядке и в целом выёбывается, 
-             * если найдёте решение - отнесите в бюро найденных решений
-            foreach (PictureBox picBox in pGameArea.Controls.OfType<PictureBox>())
-            {
-                listPicBoxFields.Add(picBox);
-            }
-            */
         }
 
         // метод выводит очередь игрока
@@ -78,12 +74,12 @@ namespace TicTacToe
                 // очередь ноликов
                 isCrossQueue = false;
                 // устанавливаем нолик цвета в зависимости от темы
-                if (isLightTheme)
+                if (isLightTheme && isBot == false)
                 {
                     // изменили значок текущего хода
                     ChangeGamer(Properties.Resources.CircleBlack);
                 }
-                else
+                else if (isBot == false && isBot == false)
                 {
                     ChangeGamer(Properties.Resources.CircleWhite);
                 }
@@ -106,6 +102,7 @@ namespace TicTacToe
                 arrPictureOnPicBox[indexOfPicBox] = TypeOfPicture.Circle;
                 // изменили значок текущего хода
                 ChangeGamer(Properties.Resources.Cross);
+
                 // очередь крестиков
                 isCrossQueue = true;
             }
@@ -205,7 +202,7 @@ namespace TicTacToe
         }
 
         // рестарт игры
-        private void restartGame()
+        public void restartGame()
         {
             // сейчас каждую игру начинают крестики - сделаете рандомно
             isCrossQueue = true;
@@ -243,20 +240,12 @@ namespace TicTacToe
             Array.Clear(recorded_choice, 0, 9);
         }
 
-        // натыркал куда угодно, поди разбери, что тут нужно, а что нет
-        private void lblZeroOrCross_Click(object sender, EventArgs e)
-        {
-
-        }
-
         // повернутися до головного екрану
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             menu.Show(this.Location);
         }
-
-        
 
         // те самые поля для хрэстиков / ноликов
         private void picBox_0_Click(object sender, EventArgs e)
@@ -265,6 +254,10 @@ namespace TicTacToe
             picBox_0.Enabled = false;
             stroke_Couter++;
             choiceRecord(0);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
+
         }
 
         private void picBox_1_Click(object sender, EventArgs e)
@@ -273,6 +266,9 @@ namespace TicTacToe
             picBox_1.Enabled = false;
             stroke_Couter++;
             choiceRecord(1);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
         private void picBox_2_Click(object sender, EventArgs e)
@@ -281,6 +277,9 @@ namespace TicTacToe
             picBox_2.Enabled = false;
             stroke_Couter++;
             choiceRecord(2);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
         private void picBox_3_Click(object sender, EventArgs e)
@@ -289,6 +288,9 @@ namespace TicTacToe
             picBox_3.Enabled = false;
             stroke_Couter++;
             choiceRecord(3);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
         private void picBox_4_Click(object sender, EventArgs e)
@@ -297,6 +299,9 @@ namespace TicTacToe
             picBox_4.Enabled = false;
             stroke_Couter++;
             choiceRecord(4);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
         private void picBox_5_Click(object sender, EventArgs e)
@@ -305,6 +310,9 @@ namespace TicTacToe
             picBox_5.Enabled = false;
             stroke_Couter++;
             choiceRecord(5);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
         private void picBox_6_Click(object sender, EventArgs e)
@@ -313,6 +321,9 @@ namespace TicTacToe
             picBox_6.Enabled = false;
             stroke_Couter++;
             choiceRecord(6);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
         private void picBox_7_Click(object sender, EventArgs e)
@@ -321,6 +332,9 @@ namespace TicTacToe
             picBox_7.Enabled = false;
             stroke_Couter++;
             choiceRecord(7);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
         private void picBox_8_Click(object sender, EventArgs e)
@@ -329,20 +343,18 @@ namespace TicTacToe
             picBox_8.Enabled = false;
             stroke_Couter++;
             choiceRecord(8);
+
+            if (isBot == true)
+                bot_input(stroke_Couter, recorded_choice);
         }
 
-        // кнопка на случай, даже если в Крестики-нолики начинает бомбить пердак
+        // кнопка перезапуска
         private void FormGamePage_FormClosing(object sender, FormClosingEventArgs e)
         {
             menu.Close();
         }
 
-        private void lblWhoseQueue_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // меняй
+        // меняем тему
         private void btnChangeTheme_Click_1(object sender, EventArgs e)
         {
             changeTheme();
@@ -354,6 +366,216 @@ namespace TicTacToe
             base.Show();
         }
 
+        public static int stroke_Couter; //Счётчик ходов, исходя из которого записывается крестик либо нолик
 
+        int[] recorded_choice = new int[9]; // Массив для записи выбора позиции хрэстика/нолика
+
+        public void choiceRecord(int choice) //Запись выбора позиции хрэстика/нолика в массив
+        {
+            if (stroke_Couter % 2 == 0)
+                recorded_choice[choice] = 2; // 2 - нолик
+            else
+                recorded_choice[choice] = 1; // 1 - хрэстик
+
+            int is_win = win_check(recorded_choice);
+
+            if (is_win == 1) //Вывод результата
+            {
+                MessageBox.Show("Победа крестиков", "Результат", MessageBoxButtons.OK);
+                stroke_Couter = 0;
+                Array.Clear(recorded_choice, 0, 9);
+                restartGame();
+            }
+            else
+            if (is_win == 2)
+            {
+                MessageBox.Show("Победа ноликов", "Результат", MessageBoxButtons.OK);
+                stroke_Couter = 0;
+                Array.Clear(recorded_choice, 0, 9);
+                restartGame();
+            }
+            if (stroke_Couter == 9 && is_win == 0)
+            {
+                MessageBox.Show("Ничья", "Результат", MessageBoxButtons.OK);
+                stroke_Couter = 0;
+                Array.Clear(recorded_choice, 0, 9);
+                restartGame();
+            }
+        }
+        public static int win_check(int[] pole)
+        {
+            //Проверка по диагонали
+            for (int i = 0; i < 5; i += 2)
+            {
+                if (((i != 4) && pole[4] == 1 && pole[i] == 1 && pole[8 - i] == 1))
+                {
+                    return 1; //win хрэстик
+                }
+
+                if (((i != 4) && pole[4] == 2 && pole[i] == 2 && pole[8 - i] == 2))
+                {
+                    return 2; //win нолик
+                }
+            }
+
+            //Проверка по горизонтали
+            for (int i = 0; i < 8; i += 3)
+            {
+                if ((pole[i] == 1 && pole[i + 1] == 1 && pole[i + 2] == 1))
+                {
+                    return 1;
+                }
+
+                if ((pole[i] == 2 && pole[i + 1] == 2 && pole[i + 2] == 2))
+                {
+                    return 2;
+                }
+            }
+
+            //Проверка по вертикали
+            for (int i = 0; i < 3; i += 1)
+            {
+                if ((pole[i] == 1 && pole[i + 3] == 1 && pole[i + 6] == 1))
+                {
+                    return 1;
+                }
+
+                if ((pole[i] == 2 && pole[i + 3] == 2 && pole[i + 6] == 2))
+                {
+                    return 2;
+                }
+            }
+
+            return 0; //никто не win
+        }
+
+        static int bot_random(int[] pole)  //Получаем радномное число
+        {
+            Random rnd = new Random();
+            int rnd1 = -1;
+
+            do
+            {
+                rnd1 = rnd.Next(0, 8);
+            } while (pole[rnd1] != 0);
+
+            return rnd1;
+        }
+
+        public void bot_input(int hod, int[] pole1)    //Вставляем значение
+        {
+            int temp = bot_check(hod, pole1);
+
+            System.Threading.Thread.Sleep(300);
+            SetPicture(temp);
+            listPicBoxFields[temp].Enabled = false;
+            stroke_Couter++;
+            choiceRecord(temp);
+        }
+
+        static int bot_check(int hod, int[] pole1)  //Проверка комбинаций
+        {
+            int[] pole = pole1;
+            int i = 0;
+
+            if (hod != 1)
+            {
+                //Проверка по диагонали для O
+                for (i = 0; i < 9; i += 2)
+                {
+                    if ((i != 4) && pole[4] == 2 && pole[i] == 2 && pole[8 - i] == 0)
+                    {
+                        return (8 - i);
+                    }
+                }
+
+                //Проверка по горизонтали для О
+                for (i = 0; i < 8; i += 3)
+                {
+                    if ((pole[i] == 2 && pole[i + 1] == 2 && pole[i + 2] == 0))
+                    {
+                        return (i + 2);
+                    }
+
+                    if ((pole[i + 1] == 2 && pole[i + 2] == 2 && pole[i] == 0))
+                    {
+                        return i;
+                    }
+
+                    if ((pole[i] == 2 && pole[i + 2] == 2 && pole[i + 1] == 0))
+                    {
+                        return (i + 1);
+                    }
+                }
+
+                //Проверка по вертикали для O
+                for (i = 0; i < 3; i += 1)
+                {
+                    if ((pole[i] == 2 && pole[i + 3] == 2 && pole[i + 6] == 0))
+                    {
+                        return (i + 6);
+                    }
+
+                    if ((pole[i + 3] == 2 && pole[i + 6] == 2 && pole[i] == 0))
+                    {
+                        return i;
+                    }
+
+                    if ((pole[i] == 2 && pole[i + 6] == 2 && pole[i + 3] == 0))
+                    {
+                        return (i + 3);
+                    }
+                }
+
+                //Проверка по диагонали для Х
+                for (i = 0; i < 9; i += 2)
+                {
+                    if (((i != 4) && pole[4] == 1 && pole[i] == 1 && pole[8 - i] == 0)) //x - по диагонали
+                    {
+                        return (8 - i);
+                    }
+                }
+
+                //Проверка по горизонтали для X
+                for (i = 0; i < 8; i += 3)
+                {
+                    if ((pole[i] == 1 && pole[i + 1] == 1 && pole[i + 2] == 0))
+                    {
+                        return (i + 2);
+                    }
+
+                    if ((pole[i + 1] == 1 && pole[i + 2] == 1 && pole[i] == 0))
+                    {
+                        return i;
+                    }
+
+                    if ((pole[i] == 1 && pole[i + 2] == 1 && pole[i + 1] == 0))
+                    {
+                        return (i + 1);
+                    }
+                }
+
+                //Проверка по вертикали для X
+                for (i = 0; i < 3; i += 1)
+                {
+                    if ((pole[i] == 1 && pole[i + 3] == 1 && pole[i + 6] == 0))
+                    {
+                        return (i + 6);
+                    }
+
+                    if ((pole[i + 3] == 1 && pole[i + 6] == 1 && pole[i] == 0))
+                    {
+                        return i;
+                    }
+
+                    if ((pole[i] == 1 && pole[i + 6] == 1 && pole[i + 3] == 0))
+                    {
+                        return (i + 3);
+                    }
+                }
+            }
+
+            return bot_random(pole);
+        }
     }
 }

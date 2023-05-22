@@ -29,147 +29,134 @@ namespace TicTacToe
         /// </summary>
         private void InitializeComponent()
         {
-            lblTictactoe = new Label();
-            lblTictactoeRus = new Label();
-            btn1Vs1Game = new Button();
-            btn1VsBotGame = new Button();
-            btnGameRules = new Button();
-            btnScores = new Button();
-            lblSmallFontBottomPage = new Label();
-            btnChangeTheme = new Button();
-            SuspendLayout();
+            this.lblTictactoe = new System.Windows.Forms.Label();
+            this.lblTictactoeRus = new System.Windows.Forms.Label();
+            this.btn1Vs1Game = new System.Windows.Forms.Button();
+            this.btn1VsBotGame = new System.Windows.Forms.Button();
+            this.btnGameRules = new System.Windows.Forms.Button();
+            this.lblSmallFontBottomPage = new System.Windows.Forms.Label();
+            this.btnChangeTheme = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // lblTictactoe
             // 
-            lblTictactoe.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lblTictactoe.Font = new Font("Impact", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTictactoe.ForeColor = Color.White;
-            lblTictactoe.Location = new Point(175, 70);
-            lblTictactoe.Name = "lblTictactoe";
-            lblTictactoe.Size = new Size(450, 100);
-            lblTictactoe.TabIndex = 0;
-            lblTictactoe.Text = "TIC TAC TOE";
-            lblTictactoe.TextAlign = ContentAlignment.MiddleCenter;
-            lblTictactoe.Click += label1_Click;
+            this.lblTictactoe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTictactoe.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTictactoe.ForeColor = System.Drawing.Color.White;
+            this.lblTictactoe.Location = new System.Drawing.Point(153, 52);
+            this.lblTictactoe.Name = "lblTictactoe";
+            this.lblTictactoe.Size = new System.Drawing.Size(394, 75);
+            this.lblTictactoe.TabIndex = 0;
+            this.lblTictactoe.Text = "TIC TAC TOE";
+            this.lblTictactoe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTictactoeRus
             // 
-            lblTictactoeRus.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTictactoeRus.ForeColor = Color.White;
-            lblTictactoeRus.Location = new Point(290, 170);
-            lblTictactoeRus.Name = "lblTictactoeRus";
-            lblTictactoeRus.Size = new Size(220, 40);
-            lblTictactoeRus.TabIndex = 1;
-            lblTictactoeRus.Text = "крестики-нолики";
-            lblTictactoeRus.TextAlign = ContentAlignment.MiddleCenter;
+            this.lblTictactoeRus.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTictactoeRus.ForeColor = System.Drawing.Color.White;
+            this.lblTictactoeRus.Location = new System.Drawing.Point(254, 128);
+            this.lblTictactoeRus.Name = "lblTictactoeRus";
+            this.lblTictactoeRus.Size = new System.Drawing.Size(192, 30);
+            this.lblTictactoeRus.TabIndex = 1;
+            this.lblTictactoeRus.Text = "крестики-нолики";
+            this.lblTictactoeRus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn1Vs1Game
             // 
-            btn1Vs1Game.BackColor = Color.FromArgb(237, 229, 220);
-            btn1Vs1Game.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
-            btn1Vs1Game.FlatAppearance.BorderSize = 2;
-            btn1Vs1Game.FlatStyle = FlatStyle.Flat;
-            btn1Vs1Game.Font = new Font("Consolas", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            btn1Vs1Game.Location = new Point(200, 250);
-            btn1Vs1Game.Margin = new Padding(3, 4, 3, 4);
-            btn1Vs1Game.Name = "btn1Vs1Game";
-            btn1Vs1Game.Size = new Size(400, 70);
-            btn1Vs1Game.TabIndex = 2;
-            btn1Vs1Game.Text = "1 VS 1";
-            btn1Vs1Game.UseVisualStyleBackColor = false;
-            btn1Vs1Game.Click += btn1Vs1Game_Click;
+            this.btn1Vs1Game.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(229)))), ((int)(((byte)(220)))));
+            this.btn1Vs1Game.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.btn1Vs1Game.FlatAppearance.BorderSize = 2;
+            this.btn1Vs1Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1Vs1Game.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn1Vs1Game.Location = new System.Drawing.Point(175, 188);
+            this.btn1Vs1Game.Name = "btn1Vs1Game";
+            this.btn1Vs1Game.Size = new System.Drawing.Size(350, 52);
+            this.btn1Vs1Game.TabIndex = 2;
+            this.btn1Vs1Game.Text = "1 VS 1";
+            this.btn1Vs1Game.UseVisualStyleBackColor = false;
+            this.btn1Vs1Game.Click += new System.EventHandler(this.btn1Vs1Game_Click);
             // 
             // btn1VsBotGame
             // 
-            btn1VsBotGame.BackColor = Color.FromArgb(237, 229, 220);
-            btn1VsBotGame.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
-            btn1VsBotGame.FlatAppearance.BorderSize = 2;
-            btn1VsBotGame.FlatStyle = FlatStyle.Flat;
-            btn1VsBotGame.Font = new Font("Consolas", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            btn1VsBotGame.Location = new Point(200, 340);
-            btn1VsBotGame.Margin = new Padding(3, 4, 3, 4);
-            btn1VsBotGame.Name = "btn1VsBotGame";
-            btn1VsBotGame.Size = new Size(400, 70);
-            btn1VsBotGame.TabIndex = 3;
-            btn1VsBotGame.Text = "1 VS БОТ";
-            btn1VsBotGame.UseVisualStyleBackColor = false;
-            btn1VsBotGame.Click += btn1VsBotGame_Click;
+            this.btn1VsBotGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(229)))), ((int)(((byte)(220)))));
+            this.btn1VsBotGame.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.btn1VsBotGame.FlatAppearance.BorderSize = 2;
+            this.btn1VsBotGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1VsBotGame.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn1VsBotGame.Location = new System.Drawing.Point(175, 255);
+            this.btn1VsBotGame.Name = "btn1VsBotGame";
+            this.btn1VsBotGame.Size = new System.Drawing.Size(350, 52);
+            this.btn1VsBotGame.TabIndex = 3;
+            this.btn1VsBotGame.Text = "1 VS БОТ";
+            this.btn1VsBotGame.UseVisualStyleBackColor = false;
+            this.btn1VsBotGame.Click += new System.EventHandler(this.btn1VsBotGame_Click);
             // 
             // btnGameRules
             // 
-            btnGameRules.BackColor = Color.FromArgb(237, 229, 220);
-            btnGameRules.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
-            btnGameRules.FlatAppearance.BorderSize = 2;
-            btnGameRules.FlatStyle = FlatStyle.Flat;
-            btnGameRules.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGameRules.Location = new Point(200, 431);
-            btnGameRules.Name = "btnGameRules";
-            btnGameRules.Size = new Size(190, 50);
-            btnGameRules.TabIndex = 4;
-            btnGameRules.Text = "Правила игры";
-            btnGameRules.UseVisualStyleBackColor = false;
-            btnGameRules.Click += btnGameRules_Click;
-            // 
-            // btnScores
-            // 
-            btnScores.BackColor = Color.FromArgb(237, 229, 220);
-            btnScores.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
-            btnScores.FlatAppearance.BorderSize = 2;
-            btnScores.FlatStyle = FlatStyle.Flat;
-            btnScores.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnScores.Location = new Point(410, 431);
-            btnScores.Name = "btnScores";
-            btnScores.Size = new Size(190, 50);
-            btnScores.TabIndex = 5;
-            btnScores.Text = "Достижения";
-            btnScores.UseVisualStyleBackColor = false;
-            btnScores.Click += btnScores_Click;
+            this.btnGameRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(229)))), ((int)(((byte)(220)))));
+            this.btnGameRules.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.btnGameRules.FlatAppearance.BorderSize = 2;
+            this.btnGameRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGameRules.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGameRules.Location = new System.Drawing.Point(175, 323);
+            this.btnGameRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGameRules.Name = "btnGameRules";
+            this.btnGameRules.Size = new System.Drawing.Size(350, 38);
+            this.btnGameRules.TabIndex = 4;
+            this.btnGameRules.Text = "Правила игры";
+            this.btnGameRules.UseVisualStyleBackColor = false;
+            this.btnGameRules.Click += new System.EventHandler(this.btnGameRules_Click);
             // 
             // lblSmallFontBottomPage
             // 
-            lblSmallFontBottomPage.AutoSize = true;
-            lblSmallFontBottomPage.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSmallFontBottomPage.ForeColor = SystemColors.ControlLightLight;
-            lblSmallFontBottomPage.Location = new Point(12, 726);
-            lblSmallFontBottomPage.Name = "lblSmallFontBottomPage";
-            lblSmallFontBottomPage.Size = new Size(344, 18);
-            lblSmallFontBottomPage.TabIndex = 6;
-            lblSmallFontBottomPage.Text = "Все права принадлежат компании NeVeReXiStS";
+            this.lblSmallFontBottomPage.AutoSize = true;
+            this.lblSmallFontBottomPage.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSmallFontBottomPage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSmallFontBottomPage.Location = new System.Drawing.Point(10, 544);
+            this.lblSmallFontBottomPage.Name = "lblSmallFontBottomPage";
+            this.lblSmallFontBottomPage.Size = new System.Drawing.Size(301, 14);
+            this.lblSmallFontBottomPage.TabIndex = 6;
+            this.lblSmallFontBottomPage.Text = "Все права принадлежат компании NeVeReXiStS";
             // 
             // btnChangeTheme
             // 
-            btnChangeTheme.BackColor = Color.FromArgb(237, 229, 220);
-            btnChangeTheme.FlatAppearance.BorderColor = Color.FromArgb(192, 89, 89);
-            btnChangeTheme.FlatAppearance.BorderSize = 2;
-            btnChangeTheme.FlatStyle = FlatStyle.Flat;
-            btnChangeTheme.Location = new Point(720, 12);
-            btnChangeTheme.Name = "btnChangeTheme";
-            btnChangeTheme.Size = new Size(50, 50);
-            btnChangeTheme.TabIndex = 7;
-            btnChangeTheme.UseVisualStyleBackColor = false;
-            btnChangeTheme.Click += btnChangeTheme_Click;
+            this.btnChangeTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(229)))), ((int)(((byte)(220)))));
+            this.btnChangeTheme.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(89)))), ((int)(((byte)(89)))));
+            this.btnChangeTheme.FlatAppearance.BorderSize = 2;
+            this.btnChangeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeTheme.Location = new System.Drawing.Point(637, 9);
+            this.btnChangeTheme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChangeTheme.Name = "btnChangeTheme";
+            this.btnChangeTheme.Size = new System.Drawing.Size(38, 38);
+            this.btnChangeTheme.TabIndex = 7;
+            this.btnChangeTheme.Text = "🌙";
+            this.btnChangeTheme.UseVisualStyleBackColor = false;
+            this.btnChangeTheme.Click += new System.EventHandler(this.btnChangeTheme_Click);
             // 
             // FrmMainMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(45, 56, 82);
-            ClientSize = new Size(782, 753);
-            Controls.Add(btnChangeTheme);
-            Controls.Add(lblSmallFontBottomPage);
-            Controls.Add(btnScores);
-            Controls.Add(btnGameRules);
-            Controls.Add(btn1VsBotGame);
-            Controls.Add(btn1Vs1Game);
-            Controls.Add(lblTictactoeRus);
-            Controls.Add(lblTictactoe);
-            MaximumSize = new Size(800, 800);
-            MinimumSize = new Size(800, 800);
-            Name = "FrmMainMenu";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "TIC TAC TOE";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(56)))), ((int)(((byte)(82)))));
+            this.ClientSize = new System.Drawing.Size(686, 571);
+            this.Controls.Add(this.btnChangeTheme);
+            this.Controls.Add(this.lblSmallFontBottomPage);
+            this.Controls.Add(this.btnGameRules);
+            this.Controls.Add(this.btn1VsBotGame);
+            this.Controls.Add(this.btn1Vs1Game);
+            this.Controls.Add(this.lblTictactoeRus);
+            this.Controls.Add(this.lblTictactoe);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(702, 610);
+            this.MinimumSize = new System.Drawing.Size(702, 610);
+            this.Name = "FrmMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TIC TAC TOE";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -179,7 +166,6 @@ namespace TicTacToe
         private Button btn1Vs1Game;
         private Button btn1VsBotGame;
         private Button btnGameRules;
-        private Button btnScores;
         private Label lblSmallFontBottomPage;
         private Button btnChangeTheme;
     }
